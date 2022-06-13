@@ -209,17 +209,21 @@ Practice accessing data above by console.log-ing following items:
 
 //(1) Name of the first artist (0th index) in the array
 
-
+console.log('task 1(1):', artists[0].name);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
-
+console.log('task 1(2):', artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 (not auto tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
-
+function changeName(array,index,name){
+  array[index].name = name;
+  return array;
+}
+console.log('task 2:', changeName(artists,9,'Vincent Van Gogh'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -230,9 +234,10 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array,number) {
+  return `the artist at index ${array[number].id} is ${array[number].name}`
 }
+console.log('task 3:', getArtistByIndex(artists,0));
 
 
 
@@ -244,9 +249,14 @@ Use copy to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function listOfNames(array){
+  let Names = [];
+  for(i=0; i<array.length; i++){
+  Names.push(array[i]['name'])
+  }
+  return Names;
 }
+  console.log('Task 4:', listOfNames(artists));
 
 
 
@@ -259,7 +269,7 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(/*Your Code Here*/) {
+function removeArtist(array) {
   /*Your Code Here*/
 }
 
